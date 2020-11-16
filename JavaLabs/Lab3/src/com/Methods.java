@@ -7,82 +7,64 @@ import java.util.List;
 
 public class Methods
 {
-    public void LinkedListADD(long k) // Время и количество итераций LinkedList ADD
+    public void ListADD(long k, List<Integer> list) // Время и количество итераций ADD
     {
         long StartTime = new Date().getTime(); // Засекаем время
-        List<Integer> LinkedList = new LinkedList<Integer>();
         for (int i = 0; i < k; i++)
         {
-            LinkedList.add(i);
+            list.add(i);
         }
         long EndTime = new Date().getTime(); // Конечное время
-        System.out.println("LinkedList ADD time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
+        System.out.println("ADD time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
         System.out.println("Iteration amount: " + k); // Количество итераций
     }
 
-    public void LinkedListREMOVE(long k) // Время и количество итераций LinkedList REMOVE
+    public void fill(long k, List<Integer> list)
     {
-
-        List<Integer> LinkedList = new LinkedList<Integer>();
+        list.clear(); // очищаем список
 
         for (int i = 0; i < k; i++) // Заполняем
-        {
-            LinkedList.add(i);
-        }
-
-        long StartTime = new Date().getTime(); // Засекаем время
-        for (int i = 0; i < k; i++)
-        {
-            LinkedList.remove(0);
-        }
-        long EndTime = new Date().getTime(); // Конечное время
-        System.out.println("LinkedList REMOVE time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
-        System.out.println("Iteration amount: " + k); // Количество итераций
+        { list.add(i); }
     }
 
-
-    public void LinkedListGET(long k) // Время и количество итераций LinkedList GET
+    public void ListREMOVE(long k, List<Integer> list) // Время и количество итераций REMOVE
     {
-
-        List<Integer> LinkedList = new LinkedList<Integer>();
-
-        for (int i = 0; i < k; i++) // Заполняем
-        {
-            LinkedList.add(i);
-        }
-
         long StartTime = new Date().getTime(); // Засекаем время
-
         for (int i = 0; i < k; i++)
         {
-            LinkedList.get(i);
+            list.remove(0);
         }
         long EndTime = new Date().getTime(); // Конечное время
-        System.out.println("LinkedList GET time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
+        System.out.println("REMOVE time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
         System.out.println("Iteration amount: " + k); // Количество итераций
     }
 
 
-    public void LinkedListSET(long k) // Время и количество итераций LinkedList SET
+    public void ListGET(long k, List<Integer> list) // Время и количество итераций GET
     {
-        List<Integer> LinkedList = new LinkedList<Integer>();
-
-        for (int i = 0; i < k; i++) // Заполняем
-        {
-            LinkedList.add(i);
-        }
-
         long StartTime = new Date().getTime(); // Засекаем время
         for (int i = 0; i < k; i++)
         {
-            LinkedList.set(i, 10);
+            list.get(i);
         }
         long EndTime = new Date().getTime(); // Конечное время
-        System.out.println("LinkedList SET time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
+        System.out.println("GET time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
         System.out.println("Iteration amount: " + k); // Количество итераций
     }
 
+    public void ListSET(long k, List<Integer> list) // Время и количество итераций SET
+    {
+        long StartTime = new Date().getTime(); // Засекаем время
+        for (int i = 0; i < k; i++)
+        {
+            list.set(i, 10);
+        }
+        long EndTime = new Date().getTime(); // Конечное время
+        System.out.println("SET time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
+        System.out.println("Iteration amount: " + k); // Количество итераций
+    }
 
+/*
     public void ArrayListADD(long k) // Время и количество итераций ArrayList ADD
     {
         long StartTime = new Date().getTime(); // Засекаем время
@@ -152,5 +134,5 @@ public class Methods
         System.out.println("ArrayList SET time(ms): " + (EndTime - StartTime)); // Время выполнения в миллисекундах
         System.out.println("Iteration amount: " + k); // Количество итераций
     }
-
+*/
 }
