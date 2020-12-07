@@ -1,0 +1,2 @@
+spackage.SomeInterface = reflection.SomeImpl
+spackage.SomeOtherInterface = reflection.SODoer
