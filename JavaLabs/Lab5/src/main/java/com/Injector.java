@@ -27,16 +27,14 @@ public class Injector {
                 FileInputStream fis = new FileInputStream(path);
                 properties.load(fis);
                 BufferedReader br = new BufferedReader(new FileReader(path));
-                String i;// = br.readLine();
+                String i;
                 do {
                     i = br.readLine();
-                    if(i != null){
                     if (i.split("=")[0].equals(type)) {
                         type = i.split("=")[1];
                         break;
                     }
                 }
-                else System.out.println("ERRORRRRRRR");}
                 while (i != null);
 
                 String name = properties.getProperty(type, null);
